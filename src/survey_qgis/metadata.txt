@@ -1,0 +1,16 @@
+[general]
+
+name=Survey Suite
+description=QGIS Processing provider for the survey-suite engines: change detection (survey-change), spectral indices (survey-imagery), and COGO computations (survey-cogo), runnable from the Processing toolbox or the model designer.
+version=0.1.0
+qgisMinimumVersion=3.16
+author=crieck2010
+email=
+about=Exposes the survey-suite Python engines as QGIS Processing algorithms under a 'Survey Suite' provider. Engines are imported lazily; install the ones you need (survey-change, survey-imagery, survey-cogo) alongside this plugin.
+tracker=https://github.com/crieck2010/survey-qgis/issues
+repository=https://github.com/crieck2010/survey-qgis
+homepage=https://github.com/crieck2010/survey-qgis
+category=Analysis
+icon=
+experimental=False
+deprecated=False
