@@ -226,11 +226,16 @@ class TestParams(unittest.TestCase):
 
 
 class TestRegistry(unittest.TestCase):
-    def test_eight_algorithms_registered(self):
-        self.assertEqual(len(ALGORITHMS), 8)
+    def test_twenty_five_algorithms_registered(self):
+        self.assertEqual(len(ALGORITHMS), 25)
 
     def test_groups(self):
-        self.assertEqual(list_groups(), ["Change detection", "Imagery", "COGO"])
+        self.assertEqual(
+            list_groups(),
+            ["Change detection", "Imagery", "Site monitoring", "Vegetation",
+             "Flood", "Burn", "Coast", "Thermal", "Elevation", "Alerts",
+             "Licensing", "COGO"],
+        )
 
     def test_get_unknown_raises(self):
         with self.assertRaises(KeyError):
@@ -238,7 +243,9 @@ class TestRegistry(unittest.TestCase):
 
     def test_list_filter(self):
         self.assertEqual(len(list_algorithms(group="COGO")), 3)
-        self.assertEqual(len(list_algorithms()), 8)
+        self.assertEqual(len(list_algorithms(group="Imagery")), 3)
+        self.assertEqual(len(list_algorithms(group="Site monitoring")), 2)
+        self.assertEqual(len(list_algorithms()), 25)
 
     def test_runner_names_resolve(self):
         for spec in ALGORITHMS.values():

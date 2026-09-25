@@ -23,6 +23,15 @@ ENGINES: Dict[str, str] = {
     "survey-gnss": "gnss",
     "survey-imagery": "imagery",
     "survey-change": "change",
+    "survey-monitor": "monitor",
+    "survey-alerts": "alerts",
+    "survey-license": "licensekit",
+    "survey-vegetation": "vegetation",
+    "survey-flood": "flood",
+    "survey-burn": "burn",
+    "survey-coast": "coast",
+    "survey-thermal": "thermal",
+    "survey-3d": "elev3d",
 }
 
 _GITHUB = "https://github.com/crieck2010"

@@ -11,10 +11,11 @@ from . import __version__
 METADATA = {
     "name": "Survey Suite",
     "description": (
-        "QGIS Processing provider for the survey-suite engines: change "
-        "detection (survey-change), spectral indices (survey-imagery), and "
-        "COGO computations (survey-cogo), runnable from the Processing "
-        "toolbox or the model designer."
+        "QGIS Processing provider for the survey-suite and earthwatch-suite "
+        "engines: change detection, spectral indices, site monitoring, "
+        "vegetation, flood, burn severity, coastline, thermal, elevation "
+        "volumes, alert reports, licensing, and COGO, runnable from the "
+        "Processing toolbox or the model designer."
     ),
     "version": __version__,
     "qgisMinimumVersion": "3.16",

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "survey-qgis"
-version = "0.1.0"
+version = "0.2.0"
 description = "QGIS distribution layer for the survey suite: Processing provider exposing survey-cogo, survey-imagery, survey-change, and survey-raster engines as QGIS algorithms, plus a headless CLI"
 readme = "README.md"
 requires-python = ">=3.9"

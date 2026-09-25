@@ -19,8 +19,11 @@ where GIS users already work — inside QGIS.
 
 ## What it provides
 
-A **Survey Suite** provider in the QGIS Processing toolbox with 8 algorithms
-in 3 groups:
+A **Survey Suite** provider in the QGIS Processing toolbox with 25 algorithms
+in 12 groups — the shared cartography bridge between the terrestrial
+[`survey-suite`](https://github.com/crieck2010/survey-suite) and the
+remote-sensing [`earthwatch-suite`](https://github.com/crieck2010/earthwatch-suite)
+(see [docs/INTEROP.md](docs/INTEROP.md) for the compatibility contracts).
 
 | Group | Algorithm | Engine |
 |---|---|---|
@@ -29,6 +32,23 @@ in 3 groups:
 | Change detection | Post-classification change comparison | `survey-change` |
 | Change detection | Find breaks in a monitor time series | `survey-change` |
 | Imagery | Compute spectral index (NDVI, NDWI, EVI, …) | `survey-imagery` |
+| Imagery | Temporal composite of index rasters | `survey-imagery` |
+| Imagery | Zonal time series from an index raster | `survey-imagery` |
+| Site monitoring | Run site monitoring config | `survey-monitor` |
+| Site monitoring | Alerts to GeoJSON layer | `survey-monitor` |
+| Vegetation | Vigor-class map | `survey-vegetation` |
+| Vegetation | Per-zone vigor time series | `survey-vegetation` |
+| Flood | Water mask from index raster | `survey-flood` |
+| Flood | Flood-extent polygons | `survey-flood` |
+| Burn | dNBR burn severity | `survey-burn` |
+| Coast | Extract shoreline from water mask | `survey-coast` |
+| Coast | Shoreline positions on transects | `survey-coast` |
+| Thermal | Land surface temperature (LST) | `survey-thermal` |
+| Thermal | Urban heat-island intensity | `survey-thermal` |
+| Elevation | DEM difference raster | `survey-3d` |
+| Elevation | Cut/fill volumes per zone | `survey-3d` |
+| Alerts | Render alert report (HTML) | `survey-alerts` |
+| Licensing | Validate license key | `survey-license` |
 | COGO | Inverse (bearing & distance) | `survey-cogo` |
 | COGO | Forward (point by azimuth & distance) | `survey-cogo` |
 | COGO | Polygon area & perimeter | `survey-cogo` |
@@ -77,7 +97,16 @@ pip install git+https://github.com/crieck2010/survey-qgis.git
 pip install git+https://github.com/crieck2010/survey-change.git  # for change algos
 pip install git+https://github.com/crieck2010/survey-imagery.git  # for indices
 pip install git+https://github.com/crieck2010/survey-cogo.git     # for COGO
-pip install rasterio  # for the spectral-index algorithm
+pip install git+https://github.com/crieck2010/survey-monitor.git  # for monitoring
+pip install git+https://github.com/crieck2010/survey-vegetation.git  # vegetation
+pip install git+https://github.com/crieck2010/survey-flood.git    # flood
+pip install git+https://github.com/crieck2010/survey-burn.git     # burn
+pip install git+https://github.com/crieck2010/survey-coast.git    # coast
+pip install git+https://github.com/crieck2010/survey-thermal.git  # thermal
+pip install git+https://github.com/crieck2010/survey-3d.git       # elevation
+pip install git+https://github.com/crieck2010/survey-alerts.git   # reports
+pip install git+https://github.com/crieck2010/survey-license.git  # licensing
+pip install rasterio  # for the raster-writing algorithms
 ```
 
 ## Quick start
@@ -137,6 +166,7 @@ result = run_algorithm("cogo_inverse", {
 ```
 
 Full reference: [docs/API.md](docs/API.md).
+Per-algorithm inputs, outputs, and engine versions: [docs/ALGORITHMS.md](docs/ALGORITHMS.md).
 
 ## Tests
 
@@ -150,7 +180,7 @@ python -m unittest discover -s tests
 ## Versioning
 
 Semantic versioning with a changelog ([CHANGELOG.md](CHANGELOG.md)).
-Current: **0.1.0**.
+Current: **0.2.0**.
 
 ## License
 
