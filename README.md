@@ -1,5 +1,13 @@
 # survey-qgis
 
+> **Shared cartography bridge** — this module lives in
+> [survey-suite](https://github.com/crieck2010/survey-suite) (terrestrial
+> surveying) and exposes engines from **both** projects inside QGIS:
+> terrestrial algorithms from survey-suite and imagery/change/monitoring
+> algorithms from [earthwatch-suite](https://github.com/crieck2010/earthwatch-suite).
+> The two projects stay compatible through the
+> [cross-suite contracts](https://github.com/crieck2010/earthwatch-suite/blob/main/docs/CONTRACTS.md).
+
 **QGIS distribution layer for the survey suite** — exposes the survey-suite
 Python engines as QGIS Processing algorithms, plus a headless CLI that runs
 the exact same algorithms outside QGIS.
